@@ -32,10 +32,11 @@ logo = Div(text="<img src= 'Bokeh_Dashboard/static/logo.png'>")
 title = Div(text="""Standard Bokeh Dashboard Starter""",
              style={'font-size': '150%', 'color': '#06bac5'},
              sizing_mode = 'fixed',
+             align = 'center',
              width = 600,
              height = 25)
 
-title_obj = row(title, margin = 25)
+
 
 #Instruction section writtin in HTML, it might be good to create a instructions object similar to Title for multiple paragraphs.
 instructions = Div(text="""Instructions can be written here.
@@ -110,6 +111,9 @@ dash_1 = column(update_button,data_table)
 #Makes the dash section into a tab sorted section
 dash_tab1 = Panel(child=dash_1, title="   Main Dashboard   ")
 dashboard = Tabs(tabs=[dash_tab1])
+
+#title objects
+title_obj = row(wspace_50, title, margin = 25)
 
 #container sections
 logo_space= column(logo, sizing_mode="fixed", height=100, width=300)
